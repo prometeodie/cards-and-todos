@@ -1,0 +1,9 @@
+body{
+    position: relative;
+    min-height: 100vh;
+    border: red 1px solid;
+}
+
+.prueba{
+    color: chartreuse;
+}

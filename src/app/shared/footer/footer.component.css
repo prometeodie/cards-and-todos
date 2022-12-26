@@ -1,0 +1,17 @@
+
+.footer{
+    position: fixed;
+    bottom: 0;
+    padding: 0.2rem;
+    text-align: right;
+    width: 99%;
+    border: 1px solid #304562;
+    color: rgba(255, 255, 255, 0.87);
+    background: #1f2d40;
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;   
+}
+
+.colorPipe{
+    color:#304562;
+}

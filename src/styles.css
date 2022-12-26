@@ -1,0 +1,41 @@
+html, body{
+    background-color:var(--surface-b) ;
+    font-family: var( --font-family );
+}
+
+.color-text{
+    color: var(--text-color);
+}
+
+
+.hrColor{
+   border-color:#304562;
+}
+
+.activedTodo{
+    color: #00695f;
+}
+
+.finishedTodo{
+    color: #c61a54;
+}
+
+.sizeDvi{
+    box-sizing: border-box;
+    height: 6em;
+    justify-content: center;
+    align-items: center; 
+}
+
+.albumColor{
+    color: var( --cyan-600);
+}
+
+.postColor{
+    color: var( --yellow-600);
+}
+
+.iconSize{
+    font-size: 4rem !important;
+    color: var(--surface-600);
+}

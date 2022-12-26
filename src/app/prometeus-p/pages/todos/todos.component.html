@@ -1,0 +1,40 @@
+
+
+<div Class=" mt-2 color-text cursor-pointer"
+     *ngFor="let todo of todos; index as i">
+            <p-fieldset (click)="todoStatusChange( i ); changeDate( i )" >
+                  <!-- STATUS -->
+                  <ng-template  pTemplate="header">
+                     <div [class]="headerColor(todo.completed)" >
+                        <i [class]="icon(todo.completed)" >  </i> {{todoStatus(i)}}
+                     </div>
+                  </ng-template >
+                     <!-- INFO -->
+                        <div class="relative">
+                           {{todo.title | titlecase}}
+                           <!-- DATE -->
+                           <!-- EntryDate -->
+                           <div class=" absolute right-0 bottom-0 ">
+                              <div class=" activedTodo mb-3" >Entry Date: 9/2/21, 9:01 PM</div>
+                              <!-- FinishedDate -->
+                              <div class="finishedTodo">
+                                 <div *ngIf="!todos[i].completed; else zeroDate">
+                                    <div>
+                                       <div *ngIf="booleanFinishDate else manualDateChange">
+                                          Finished Date: {{todos[i].finishTodo| date:'short'}}
+                                       </div>
+                                       <ng-template #manualDateChange>
+                                          Finished Date: {{todos[i].finishTodo | date:'short'}}
+                                       </ng-template>
+                                    </div>
+                                 </div>
+                                 <ng-template #zeroDate >
+                                    <span class="mr-3">
+                                       Finished Date: --/--/--, --:-- --    
+                                    </span> 
+                                 </ng-template>
+                              </div>                            
+                           </div>
+                        </div>
+            </p-fieldset>                  
+</div>              

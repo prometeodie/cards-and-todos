@@ -1,0 +1,39 @@
+    <div class="grid ">
+                <p-card *ngFor="let album of albums; index as i" 
+                        class=" col-3 text-center cursor-pointer "
+                        (click)="changeToPost(i)">
+                        <!-- title -->
+                        <ng-template pTemplate="header"  >
+                            <div *ngIf="!this.albums[i].showBoolean; else showPost" class="albumColor pt-3">
+                                {{this.albums[i].title | titlecase }}
+                            </div>
+                            <ng-template #showPost >
+                                <div class=" postColor pt-3">
+                                    {{this.post[i].title | titlecase}}
+                                </div>
+                           </ng-template>
+                        </ng-template>
+                        
+                        <!-- icon -->
+                        <div class="flex sizeDvi">
+                            <i class="pi pi-align-center iconSize" *ngIf="!this.albums[i].showBoolean; 
+                                                            else showPostBody "></i>
+                            <ng-template #showPostBody>
+                                {{this.post[i].body}}
+                            </ng-template>
+                            
+                        </div>
+                        <!-- footer -->
+                            <ng-template pTemplate="footer">
+                                <div  *ngIf="!this.albums[i].showBoolean else showFoot">
+                                    <span class="albumColor">Album</span>
+                                </div>
+
+                                <ng-template #showFoot>
+                                    <span class="postColor">Post</span>
+                                </ng-template>
+                            </ng-template>        
+                </p-card>
+        </div>
+        
+
